@@ -2,12 +2,12 @@ import type { Produto } from "../types/produto";
 
 interface CartaoProdutoProps {
   produto: Produto;
-  mostrarCategoria?: boolean;
+  minimoPreco?: number;
 }
 
 export function CartaoProduto({
   produto,
-  mostrarCategoria = true,
+  minimoPreco = 30,
 }: CartaoProdutoProps) {
   return (
     <article>
@@ -17,13 +17,13 @@ export function CartaoProduto({
 
       <p>Preço de venda: R$ {produto.preco_venda.toFixed(2)}</p>
 
-      {mostrarCategoria && (
-        <p>ID da categoria: {produto.id_categoria}</p>
-      )}
+      <p>ID da categoria: {produto.id_categoria}</p>
 
-      <p>
-        {produto.ativo ? "Produto ativo" : "Produto inativo"}
-      </p>
+      <p>{produto.ativo ? "Produto ativo" : "Produto inativo"}</p>
+
+      {produto.preco_venda < minimoPreco && (
+        <p>Produto com preço abaixo do mínimo</p>
+      )}
     </article>
   );
 }

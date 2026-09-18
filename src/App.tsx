@@ -1,4 +1,4 @@
-import { CartaoProduto } from "./componentes/CartaoProdudo";
+import { CartaoProduto } from "./componentes/CartaoProduto";
 import type { Produto } from "./types/produto";
 import { FormularioProduto } from "./componentes/FormularioProduto";
 
@@ -27,7 +27,10 @@ export default function App() {
 
       <CartaoProduto produto={produto1} />
 
-      <CartaoProduto produto={produto2} />
+      <CartaoProduto
+        produto={produto2}
+        minimoPreco={100}
+      />
     </main>
   );
 }
