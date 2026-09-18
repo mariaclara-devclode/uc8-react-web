@@ -5,7 +5,7 @@ interface CartaoProdutoProps {
   minimoPreco?: number;
 }
 
-export function CartaoProduto({
+export default function CartaoProduto({
   produto,
   minimoPreco = 30,
 }: CartaoProdutoProps) {

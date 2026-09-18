@@ -1,6 +1,5 @@
-import { CartaoProduto } from "./componentes/CartaoProduto";
+import CartaoProduto from "./componentes/CartaoProduto";
 import type { Produto } from "./types/produto";
-import { FormularioProduto } from "./componentes/FormularioProduto";
 
 const produto1: Produto = {
   id: 1,
@@ -23,14 +22,11 @@ const produto2: Produto = {
 export default function App() {
   return (
     <main>
-      <h1>ESTOK</h1>
+      <h1>Estok</h1>
 
       <CartaoProduto produto={produto1} />
 
-      <CartaoProduto
-        produto={produto2}
-        minimoPreco={100}
-      />
+      <CartaoProduto produto={produto2} minimoPreco={100} />
     </main>
   );
 }
